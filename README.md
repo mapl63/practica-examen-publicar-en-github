@@ -4,7 +4,7 @@
 ## Publicar tu repositorio a través de GitHub Pages
 
 Comienza el examen práctico del módulo de Despliegue de Aplicaciones Web. El reto consiste en publicar un repositorio [a través de GitHub
-Pages](https://docs.github.com/es/pages). Esta práctica-examen la puedes empezar desde ahora mismo, si quieres. De este modo, el día señalado, bastará con depurarla.
+Pages](https://docs.github.com/es/pages). Esta práctica-examen la puedes empezar desde ahora mismo, si quieres. De este modo el día señalado bastará con depurarla.
 
 El día del examen práctico te propondré una serie de mejoras y cambios en ese mismo proyecto, que deberás implementar durante el tiempo establecido .
 
