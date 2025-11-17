@@ -5,18 +5,61 @@
     <meta name="viewport" content="width=device-width" />
     <title>Mi experimento CSS + Git</title>
     <style>
+	body{
+		background: black;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+	}
       h1 {
-        color: white;
-        background-color: green;
-        border: 1px solid black;
+        color: black;
+        background-color: pink;
+        border: 1px solid pink;
+	width: 50%;
+	transition:
+		box-shadow 1s ease,
+		transform 1s ease;
+	}
+
+	h1:hover{
+	box-shadow: 0 0 30px pink, 0 0 50px pink;
+	transform: scale(1.5);
       }
 
       p {
-        color: aliceblue;
-        background-color: rgb(150, 44, 248);
-        border: 3px black solid;
+        color: white;
+        background-color: #4d00aa;
+	border-radius: 10px;
+        border: 3px #4d00aa solid;
         font-size: medium;
+	box-shadow: 0 0 10px green, 0 0 20px green;
+	transition:
+		box-shadow 1s ease,
+		transform 1s ease;
       }
+
+	p:hover{
+		box-shadow: 10px 10px 20px #4d00aa, 0 0 30px #4d00aa;
+		transform: scale(1.5);
+		
+	}
+	h3{
+		background: red;
+		color: black;
+		font-size: 2em;
+		transition:
+			box-shadow 1s ease,
+			transform 1s ease,
+			color 1s ease;
+		
+	}
+	h3:hover{
+		color:white;
+		box-shadow: 0 0 20px red, 0 0 30px red;
+		transform: scale(1.2);
+		
+	}	
     </style>
   </head>
   <body>
@@ -26,5 +69,6 @@
     <h2>Subtítulo</h2>
     <p>Segundo elemento de parrafo</p>
 	<h1>¡HALA MADRID!</h1>
+	<h3>Negreira No hizo Ningun Informe Culerdos de mierda</h3>
   </body>
 </html>
