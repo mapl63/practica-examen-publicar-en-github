@@ -1,76 +1,145 @@
 <!DOCTYPE html>
-<html lang="en-US">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Mi experimento CSS + Git</title>
-    <style>
-	body{
-		background: violet;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		flex-direction: column;
-		font-size: 64px;
-	}
-      h1 {
-        color: black;
-        background-color: pink;
-        border: 1px solid pink;
-	width: 30%;
-	transition:
-		box-shadow 1s ease,
-		transform 1s ease;
-	}
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mi experimento CSS + Git</title>
+<style>
 
-	h1:hover{
-	box-shadow: 0 0 30px pink, 0 0 50px pink;
-	transform: scale(1.5);
-      }
+body {
+    background: violet;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 64px;
+}
 
-      p {
-        color: white;
-        background-color: #4d00aa;
-	border-radius: 10px;
-        border: 3px #4d00aa solid;
-        font-size: medium;
-	box-shadow: 0 0 10px #4d00aa, 0 0 20px #4d00aa;
-	transition:
-		box-shadow 1s ease,
-		transform 1s ease;
-      }
+h1 {
+    color: black;
+    background-color: pink;
+    border: 1px solid pink;
+    width: 63%;
+    transition: box-shadow 1s ease, transform 1s ease;
+}
 
-	p:hover{
-		box-shadow: 10px 10px 20px #4d00aa, 0 0 30px #4d00aa;
-		transform: scale(2);
-		
-	}
-	h3{
-		background: red;
-		color: black;
-		font-size: 2em;
-		transition:
-			box-shadow 1s ease,
-			transform 1s ease,
-			color 1s ease;
-		
-	}
-	h3:hover{
-		color:white;
-		box-shadow: 0 0 20px red, 0 0 30px red;
-		transform: scale(1.2);
-		
-	}	
-    </style>
-  </head>
-  <body>
-    <h1>HOLA Git XD !</h1>
-    <p>Este es mi primer ej. con CSS y Git</p>
+h1:hover {
+    box-shadow: 0 0 30px pink, 0 0 50px rgba(3, 217, 232, 0.972);
+    background: rgb(0, 255, 213);
+    transform: scale(1.2);
+}
 
-    <h2>Subtítulo</h2>
-    <p>Segundo elemento de parrafo</p>
-	<h1>¡HALA MADRID!</h1>
-	<h3>Negreira No hizo Ningun Informe</h3>
-    <footer> Este es el pie de página ~ Año 2005 </footer>
-  </body>
+p {
+    color: white;
+    background-color: #4d00aa;
+    border-radius: 10px;
+    border: 3px #4d00aa solid;
+    font-size: medium;
+    box-shadow: 0 0 10px #4d00aa, 0 0 20px #4d00aa;
+    transition: box-shadow 1s ease, transform 1s ease;
+}
+
+p:hover {
+    box-shadow: 10px 10px 20px #4d00aa, 0 0 30px #4d00aa;
+    transform: scale(2);
+}
+
+h3 {
+    background: red;
+    color: black;
+    font-size: 1em;
+    transition: box-shadow 1s ease, transform 1s ease, color 1s ease;
+}
+
+h3:hover {
+    color: white;
+    box-shadow: 0 0 20px red, 0 0 30px red;
+    transform: scale(1.2);
+}
+
+
+.mascot {
+    position: relative;
+    font-size: 64px;  
+    text-align: center;
+    line-height: 1;
+    user-select: none;
+    margin: 30px 0;  
+}
+
+
+.eyes {
+    position: absolute;
+    top: 42px;  
+    left: 110px; 
+    display: flex;
+    gap: 40px;  
+}
+
+.eye {
+    width: 26px;
+    height: 26px;
+    top: 108.7px;
+    background: white;
+    border: 2px solid black;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+.pupil {
+    width: 12px;
+    height: 12px;
+    background: black;
+    border-radius: 50%;
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    transition: transform 0.05s linear;
+}
+</style>
+</head>
+<body>
+
+<h1>HOLA Git XD !</h1>
+<p>Este es mi primer ej. con CSS y Git</p>
+<h2>Subtítulo</h2>
+<p>Segundo elemento de parrafo</p>
+
+
+<div class="mascot">
+<pre>
+  /\_/\  
+ ( o o ) 
+  > ^ &lt;  
+</pre>
+
+<div class="eyes">
+    <div class="eye"><div class="pupil"></div></div>
+    <div class="eye"><div class="pupil"></div></div>
+</div>
+</div>
+
+<h1>¡HALA MADRID!</h1>
+<h3>Negreira No hizo Ningun Informe</h3>
+<footer>Este es el pie de página ~ Año 2005</footer>
+
+
+<script>
+document.addEventListener("mousemove", (e) => {
+    const pupils = document.querySelectorAll(".pupil");
+    pupils.forEach(pupil => {
+        const rect = pupil.getBoundingClientRect();
+        const eyeX = rect.left + rect.width / 2;
+        const eyeY = rect.top + rect.height / 2;
+        const angle = Math.atan2(e.clientY - eyeY, e.clientX - eyeX);
+        const moveX = Math.cos(angle) * 6;
+        const moveY = Math.sin(angle) * 6;
+        pupil.style.transform = `translate(${moveX}px, ${moveY}px)`;
+    });
+});
+</script>
+
+</body>
 </html>
+
